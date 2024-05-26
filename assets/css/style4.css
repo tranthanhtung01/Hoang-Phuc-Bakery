@@ -64,7 +64,7 @@ CSS INDEX
     --font-weight-body--bolder: 700;
 
     --font-color-body: #6f6f6f;
-    --font-size-body: 15px;
+    --font-size-body: 14px;
     --background-color-body: #ffffff;
     --extra-color-body: #f3f2ee;
 
@@ -1141,6 +1141,26 @@ a.theme-header-logo img {
         max-width: 110px;
     }
 }
+
+
+/* logo coming soon */
+.logo-container {
+    width: 100%;
+    max-width: 300px; /* Điều chỉnh kích thước tối đa của logo */
+    margin: 0 auto; /* Canh giữa container logo */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#logo {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Đảm bảo logo không vượt quá kích thước container */
+}
+.container-form{
+    text-align: center;
+}
+
     
 /*=====================================
     main-menu-wrap css
@@ -1410,7 +1430,7 @@ a.theme-header-logo img {
 .megamenu-content .mainwrap ul.main-menu li.menu-link .menu-dropdown.single-menu li.singlemenu-li a.singlelink-title {
     display: block;
     color: var(--font-color-body);
-    font-size: 16px;
+    font-size: 14px;
     width: 100%;
     padding: 10px 15px;
     text-overflow: ellipsis;
@@ -1605,7 +1625,7 @@ a.theme-header-logo img {
 .megamenu-content .mainwrap ul.main-menu li.menu-link .menu-dropdown.product-menu ul.ul li.productlink-li ul.productsupmenu-dropdown li.productsupmenu-li a.productsuplink-title {
     display: block;
     color: var(--font-color-body);
-    font-size: 16px;
+    font-size: 14px;
     width: 100%;
     padding: 10px 15px;
     background-color: var(--background-color-body);
