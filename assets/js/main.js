@@ -27,7 +27,67 @@ $(window).on('load',function(){
     $('.preloader').delay(100).fadeOut('fast');
 });
 
+/////////////////////////////
+document.addEventListener('DOMContentLoaded', function() {
+    const pages = document.querySelectorAll('.page');
+    const pageLinks = document.querySelectorAll('.page-link');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    let currentPage = 1;
 
+    function showPage(pageNumber) {
+        pages.forEach(page => page.classList.remove('active'));
+        document.getElementById(`page-${pageNumber}`).classList.add('active');
+
+        currentPage = pageNumber;
+
+        // Update active class for pagination links
+        pageLinks.forEach(link => {
+            link.classList.remove('active');
+            if (parseInt(link.getAttribute('data-page')) === currentPage) {
+                link.classList.add('active');
+            }
+        });
+
+        // Disable/enable prev/next buttons
+        prevButton.disabled = currentPage === 1;
+        nextButton.disabled = currentPage === pages.length;
+
+        // Update URL hash
+        window.location.hash = `#page-${currentPage}`;
+    }
+
+    pageLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const page = this.getAttribute('data-page');
+            showPage(parseInt(page));
+        });
+    });
+
+    prevButton.addEventListener('click', function() {
+        if (currentPage > 1) {
+            showPage(currentPage - 1);
+        }
+    });
+
+    nextButton.addEventListener('click', function() {
+        if (currentPage < pages.length) {
+            showPage(currentPage + 1);
+        }
+    });
+
+    // Show the initial page from URL hash or default to the first page
+    const initialPage = parseInt(window.location.hash.replace('#page-', ''), 10);
+    if (!isNaN(initialPage) && initialPage >= 1 && initialPage <= pages.length) {
+        showPage(initialPage);
+    } else {
+        showPage(1);
+    }
+});
+
+
+
+///////////////////////////
 (function($) {
     "use strict";
     /*==============================

@@ -576,9 +576,10 @@ textarea[disabled] {
     section-padding css
 =====================================*/
 .section-ptb {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
+
 .section-pt {
     padding-top: 100px;
 }
@@ -5142,3 +5143,4 @@ ul.breadcrumb-list li span:last-child::after {
         padding-top: 60px;
     }
 }
+

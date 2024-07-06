@@ -104,6 +104,8 @@
     }
 }
 
+
+
 /* product sorting css */
 .product-short {
     display: flex;
@@ -261,9 +263,11 @@
 
 /* product-view grid css */
 .shop-product-wrap ul.product-view {
+    list-style: none;
     display: flex;
     flex-wrap: wrap;
-    margin-left: -30px;
+    justify-content: space-around;
+    padding: 0;
 }
 .shop-product-wrap ul.product-view li.st-col-item {
     margin-top: 30px;
@@ -277,6 +281,51 @@
         margin-left: 12px
     }
 } 
+
+
+/* General styles for product grid */
+.product-view {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* Hide all pages by default */
+.page {
+    display: none;
+}
+
+/* Show the active page */
+.page.active {
+    display: block;
+}
+
+/* Button styles for pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination .page-link {
+    margin: 0 5px;
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border: 1px solid #dddddd;
+    cursor: pointer;
+}
+.page-link.active {
+    color: #dc2424;
+}
+
+.pagination .page-link[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
 
 /* single-product grid-3 css */
 .shop-product-wrap.grid-3 ul.product-view li.st-col-item {
